@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/EAFC-trading-calculator/", // Set this to your repository name
+  base: "https://juliancamilogallego.github.io/EAFC-trading-calculator/", // Set this to your repository name
 });

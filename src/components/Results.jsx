@@ -1,7 +1,7 @@
 import { calculateTradingResults, formatter } from "../util/investment.js";
 
 export default function Results({ input }) {
-  const resultsData = calculateTradingResults(input);
+  const data = calculateTradingResults(input);
 
   return (
     <table id="result">
@@ -15,9 +15,9 @@ export default function Results({ input }) {
         </tr>
       </thead>
       <tbody>
-        {resultsData.map((yearData) => {
-          const totalProfit = yearData.profit; // Profit made in that year
-          const totalAmountInvested = input.tradeAmount * yearData.tradesMade;
+        {data.map((yearData) => {
+          const totalProfit = yearData.profit;
+          const totalAmountInvested = input.trade * yearData.tradesMade;
 
           return (
             <tr key={yearData.year}>

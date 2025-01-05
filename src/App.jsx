@@ -6,13 +6,13 @@ import Results from "./components/Results.jsx";
 
 function App() {
   const [userInput, setUserInput] = useState({
-    startingBalance: 10000,
-    tradeAmount: 500,
-    expectedProfitPercent: 10,
-    duration: 10,
+    initial: 10,
+    trade: 5,
+    expectedProfit: 80,
+    duration: 5,
   });
 
-  const inputIsValid = userInput.duration >= 1;
+  const hasInput = userInput.duration >= 1;
 
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
@@ -27,10 +27,11 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      {!inputIsValid && (
-        <p className="center">Please enter a duration greater than zero.</p>
+      {!hasInput ? (
+        <p className="center">Enter a duration.</p>
+      ) : (
+        <Results input={userInput} />
       )}
-      {inputIsValid && <Results input={userInput} />}
     </>
   );
 }

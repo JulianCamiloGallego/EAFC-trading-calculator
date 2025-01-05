@@ -1,6 +1,5 @@
 export default function UserInput({ onChange, userInput }) {
-  let { startingBalance, tradeAmount, expectedProfitPercent, duration } =
-    userInput;
+  let { initial, trade, expectedProfit, duration } = userInput;
 
   return (
     <section id="user-input">
@@ -8,20 +7,20 @@ export default function UserInput({ onChange, userInput }) {
         <p>
           <label>Starting Balance</label>
           <input
-            name="startingBalance"
+            name="initial"
             type="number"
             required
-            value={startingBalance}
+            value={initial}
             onChange={(e) => onChange(e.target.name, e.target.value)}
           />
         </p>
         <p>
           <label>Trade Amount</label>
           <input
-            name="tradeAmount"
+            name="trade"
             type="number"
             required
-            value={tradeAmount}
+            value={trade}
             onChange={(e) => onChange(e.target.name, e.target.value)}
           />
         </p>
@@ -30,10 +29,10 @@ export default function UserInput({ onChange, userInput }) {
         <p>
           <label>Expected Profit (%)</label>
           <input
-            name="expectedProfitPercent"
+            name="expectedProfit"
             type="number"
             required
-            value={expectedProfitPercent}
+            value={expectedProfit}
             onChange={(e) => onChange(e.target.name, e.target.value)}
           />
         </p>
